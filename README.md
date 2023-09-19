@@ -61,5 +61,5 @@ Prepare for technical interviews with a comprehensive collection of interview qu
 Contributions to this repository are welcome! If you have additional data structures, algorithms, or coding questions to add, then please contribute.
 
 <div align="center">
-# 🧑‍💻 Happy coding!
+<h1>🧑‍💻 Happy coding!</h1>
 </div>

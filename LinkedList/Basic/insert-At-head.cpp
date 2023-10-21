@@ -22,8 +22,17 @@ public:
     }
 };
 
-void insertAtHead(Node *&head, int data)
+void insertAtHead(Node *&head,Node*&tail, int data)
 {
+
+        if (head == NULL)
+        {
+            Node *newNode = new Node(data);
+            head = newNode;
+            tail = newNode;            
+        }
+        
+
     // Step 1 : create newNode object
     Node *newNode = new Node(data);
 
@@ -50,11 +59,11 @@ int main()
 {
 
     Node* head = NULL;
-
-    insertAtHead(head,10);
-    insertAtHead(head,20);
-    insertAtHead(head,30);
-    insertAtHead(head,40);
+    Node* tail = NULL;
+    insertAtHead(head,tail,10);
+    insertAtHead(head,tail,20);
+    insertAtHead(head,tail,30);
+    insertAtHead(head,tail,40);
 
     print(head);
 

@@ -1,4 +1,5 @@
 // Find middle node
+// LeetCode 25
 
 #include <iostream>
 using namespace std;
@@ -89,14 +90,14 @@ int main()
     Node *third = new Node(30);
     Node *fourth = new Node(40);
     Node *fifth = new Node(50);
-    Node *sixth = new Node(60);
+   // Node *sixth = new Node(60);
 
     head->next = second;
     second->next = third;
     third->next = fourth;
     fourth->next = fifth;
-    fifth->next = sixth;
-    sixth->next=NULL;
+    fifth->next = NULL;
+  //  sixth->next=NULL;
 
     print(head);
     cout << endl;

@@ -56,6 +56,7 @@ Node*startingPointLoop(Node*&head){
         
     }
 
+   
    while (slow!=fast)
    {
     slow=slow->next;

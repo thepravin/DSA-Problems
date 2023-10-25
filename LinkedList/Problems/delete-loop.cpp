@@ -1,5 +1,4 @@
-// Detect and delete loop
-// LeetCode : 
+// find starting node of loop
 
 #include <iostream>
 using namespace std;
@@ -30,10 +29,10 @@ int getLength(Node *&head)
 }
 
 // ************************************************
-bool isLoopPresent(Node*&head){
+Node*removeLoop(Node*&head){
     if (head==NULL)
     {
-        return false;
+        return head;
     }
 
     Node* slow = head;
@@ -49,18 +48,32 @@ bool isLoopPresent(Node*&head){
 
         if (slow == fast)
         {
-            // loop present
-            return true;
+            // they meet then 
+            slow= head;
+            break;
         }
         
         
     }
 
-    // fast is equal to null
-    return false; // no loop
+    // crete one previous pointer behind the fast pointer
+    Node* prev = fast;
+   while (slow!=fast)
+   {
+    prev=fast;
+    slow=slow->next;
+    fast=fast->next;
+   }
+   
+   prev->next=NULL;
+   return slow;
     
     
 }
+
+
+
+
 
 // *********************************************
 
@@ -97,14 +110,12 @@ int main()
    eighth->next =ninth;
    ninth->next =eighth;
 
- 
-  bool ans = isLoopPresent(head);
-  if (ans)
-  {
-    cout<<"Loop PRESENT"<<endl;
-  }else{
-    cout<<" No Loop "<<endl;
-  }
+ removeLoop(head);
+ print(head);
+  
+
+
+
   
   
 

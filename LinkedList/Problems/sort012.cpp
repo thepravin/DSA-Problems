@@ -57,6 +57,98 @@ void sortZeroOneTwo(Node *&head)
     }
 }
 
+Node* withoutCounting(Node*& head){
+    // creating doumy nodes
+    Node* zerosHead = new Node(-1);
+    Node* zerosTail = zerosHead;
+
+    Node* onesHead = new Node(-1);
+    Node* oneTail = onesHead;
+
+    Node* twosHead = new Node(-1);
+    Node* twosTail = twosHead;
+
+    // travel the original LL
+    Node* curr = head;
+    while (curr != NULL)
+    {
+        if (curr->data==0)
+        {
+            // take out the zero wali nodes
+            Node* temp =curr;
+            curr = curr->next;
+            temp->next=NULL;
+            // append the zeros node in zerosHead LL
+            zerosTail->next = temp;
+            zerosTail=temp;
+        }
+        else if (curr->data==1)
+        {
+            // take out the one wali nodes
+            Node* temp =curr;
+            curr = curr->next;
+            temp->next=NULL;
+            // append the one node in oneHead LL
+            oneTail->next = temp;
+            oneTail=temp;
+        }
+        else if (curr->data==2)
+        {
+            // take out the two wali nodes
+            Node* temp =curr;
+            curr = curr->next;
+            temp->next=NULL;
+            // append the two node in twoHead LL
+            twosTail->next = temp;
+            twosTail=temp;
+        }
+        
+    }
+  // yha pr, zero,one,two teeno LL readyv h
+
+  //join them
+  // remove dummy nodes
+
+  // modify one wali list
+  Node* temp = onesHead;
+  onesHead = onesHead->next;
+  temp->next=NULL;
+  delete temp;
+
+  // modify two wali list
+  temp = twosHead;
+  twosHead = twosHead->next;
+  temp->next=NULL;
+  delete temp;
+
+  // join list
+   if (onesHead != NULL)
+   {
+        // one wali list is non empty
+        zerosTail->next = onesHead;
+        if (twosHead != NULL)
+        {
+            oneTail->next = twosHead;
+        }
+        
+   }else{
+    //one wali list is empty
+    if (twosHead !=NULL)
+    {
+        zerosTail = twosHead;
+    }
+    
+   }
+   // remove zerohead dummy node
+   temp=zerosHead;
+   zerosHead = zerosHead->next;
+   temp->next = NULL;
+
+   return zerosHead;
+    
+
+}
+
 // *********************************************
 
 void print(Node *&head)
@@ -87,8 +179,14 @@ int main()
     print(head);
     cout << endl;
 
-    sortZeroOneTwo(head);
+    // using counting
+    // sortZeroOneTwo(head);
+    // print(head);
+
+    // without counting
+   head= withoutCounting(head);
     print(head);
+
 
     return 0;
 }

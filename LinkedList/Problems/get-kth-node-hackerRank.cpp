@@ -64,10 +64,14 @@ void fun(Node *&head, int &positionFromTail, int &ans)
         return;
     }
 
+
     // go upto last node
     fun(head->next, positionFromTail, ans);
 
     // last to first travel
+
+    fun(head->next, positionFromTail, ans);
+
     if (positionFromTail == 0)
     {
         ans = head->data;

@@ -135,7 +135,7 @@ Node* withoutCounting(Node*& head){
     //one wali list is empty
     if (twosHead !=NULL)
     {
-        zerosTail = twosHead;
+        zerosTail->next = twosHead;
     }
     
    }
@@ -168,8 +168,8 @@ int main()
     Node *second = new Node(1);
     Node *third = new Node(2);
     Node *fourth = new Node(2);
-    Node *fifth = new Node(0);
-    Node *six = new Node(1);
+    Node *fifth = new Node(2);
+    Node *six = new Node(0);
 
     head->next = second;
     second->next = third;

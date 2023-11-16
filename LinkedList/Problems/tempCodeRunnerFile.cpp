@@ -1,2 +1,1 @@
-prev = curr;
-            // curr = curr->next;
+ListNode

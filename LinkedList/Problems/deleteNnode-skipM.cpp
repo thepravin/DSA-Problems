@@ -27,7 +27,7 @@ void printLL(Node *head)
     }
 }
 
-//**************************************************
+//****************** GfG  *************************
 void linkdelete(Node *head, int M, int N)
 {
     if (!head)
@@ -64,7 +64,52 @@ void linkdelete(Node *head, int M, int N)
     MthNode->next = it;
 
     linkdelete(it, M, N);
-    
+}
+//**************************************************
+//****************** code studio  *************************
+
+Node *helper(Node *head, int n, int m)
+{
+    Node *it = head;
+
+    for (int i = 0; i < m - 1; ++i)
+    {
+        if (!it || !it->next)
+        {
+            return head; // Return the current head if unable to reach Mth node
+        }
+        it = it->next;
+    }
+
+    Node *MthNode = it;
+    it = MthNode->next;
+    for (int i = 0; i < n && it; ++i)
+    {
+        Node *temp = it->next;
+        delete it; // Free the memory
+        it = temp;
+    }
+
+    MthNode->next = it;
+
+    if (it)
+    {
+        // If there are more nodes, make a recursive call
+        helper(it, n, m);
+    }
+
+    return head; // Return the new head after deletion
+}
+
+Node *getListAfterDeleteOperation(Node *head, int N, int M)
+{
+    if (!head)
+    {
+        return head;
+    }
+
+    head = helper(head, N, M);
+    return head;
 }
 //**************************************************
 
@@ -93,7 +138,9 @@ int main()
     printLL(head);
     cout << endl;
 
-    linkdelete(head, M, N);
+    // linkdelete(head, M, N);
+
+    head = getListAfterDeleteOperation(head, N, M);
 
     printLL(head);
 

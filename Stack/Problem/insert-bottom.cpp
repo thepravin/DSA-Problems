@@ -14,7 +14,7 @@ void insertBottom(stack<int> &st, int data)
     int temp = st.top();
     st.pop();
 
-    cout<<temp<<endl;
+ 
     insertBottom(st, data);
 
     st.push(temp);

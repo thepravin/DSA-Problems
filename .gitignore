@@ -1,3 +1,7 @@
 *.exe
 
 practice.cpp
+
+.vscode
+
+setting.json

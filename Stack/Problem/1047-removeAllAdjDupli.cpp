@@ -40,7 +40,7 @@ string removeDuplicates(string s)
 
 int main()
 {
-    string s = "abbaca";
+    string s = "abccbccba";
 
     string ans = removeDuplicates(s);
 

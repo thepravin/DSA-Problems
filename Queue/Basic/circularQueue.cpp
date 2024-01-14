@@ -21,7 +21,7 @@ public:
     void push(int data)
     {
         // check full
-        if ((front == 0 && rear == size - 1))
+        if ((front == 0 && rear == size - 1)||(front==rear+1))
         {
             cout << "Queue is Full !!" << endl;
         }

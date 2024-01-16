@@ -17,8 +17,6 @@ public:
 };
 //*******************************************************************************
 
-
-
 vector<int> nextLargerNodes(ListNode *head)
 {
     if (head == nullptr)
@@ -28,41 +26,38 @@ vector<int> nextLargerNodes(ListNode *head)
     }
 
     // list into array
-    vector<int> ll ;
+    vector<int> ll;
     while (head)
     {
         ll.push_back(head->val);
-        head=head->next;
+        head = head->next;
     }
 
-    stack<int>st;  // store index
- 
+    stack<int> st; // store index
+
     for (int i = 0; i < ll.size(); i++)
     {
-        while (!st.empty()&& ll[i]>ll[st.top()])
+        while (!st.empty() && ll[i] > ll[st.top()])
         {
             // i'th element is nextLargest element, of present element index in stack
             int prev = st.top(); // store index
-            st.pop(); 
-            ll[prev]=ll[i];
+            st.pop();
+            ll[prev] = ll[i];
         }
         st.push(i);
-        
     }
-    
+
     // some greate elemets are remaning
     while (!st.empty())
     {
-        ll[st.top()]=0;
+        ll[st.top()] = 0;
         st.pop();
     }
 
     // last elements is always 0
-    ll[ll.size()-1]=0;
+    ll[ll.size() - 1] = 0;
 
     return ll;
-    
-    
 }
 
 int main()

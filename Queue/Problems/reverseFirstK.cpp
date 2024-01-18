@@ -11,8 +11,8 @@ void reversefirstK(queue<int> &q, int &k)
     stack<int> st;
 
     // step 1: push queue to stack 'k' elements
-    int kElement=0;
-    while (kElement<k)
+    int kElement = 0;
+    while (kElement < k)
     {
         int element = q.front();
         q.pop();
@@ -30,6 +30,7 @@ void reversefirstK(queue<int> &q, int &k)
 
     // step 3 : psuh {(size-k) to last} element after the k reverse element,
     // because here : 2 1 3 4 5
+
     int size = q.size();
     int count = size - k;
     while (count > 0)

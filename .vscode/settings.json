@@ -3,6 +3,9 @@
         "*.ejs": "html",
         "iostream": "cpp",
         "*.tcc": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     }
 }

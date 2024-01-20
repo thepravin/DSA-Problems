@@ -112,15 +112,60 @@ int maxArea(vector<vector<int>> &v, int n, int m)
 
     return area;
 }
+// ********************* LeetCode*******************
+/* int maximalRectangle(vector<vector<char>> &matrix)
+{
+    // convert char to int
+    vector<vector<int>> v;
+    int n = matrix.size();
+    int m = matrix[0].size();
+    for (int i = 0; i < n; i++)
+    {
+        vector<int> t; // one row
+        for (int j = 0; j < m; j++)
+        {
+            t.push_back(matrix[i][j] - '0');
+        }
+        v.push_back(t);
+    }
+
+    // step 1 : largest area of first row
+    int area = largestRectangleArea(v[0]);
+
+    // adding next row's
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (v[i][j])
+            {
+                // add curr element with same column previous row
+                v[i][j] += v[i - 1][j];
+            }
+            else
+            {
+                v[i][j] = 0;
+            }
+        }
+        area = max(area, largestRectangleArea(v[i]));
+    }
+
+    return area;
+} */
 
 int main()
 {
 
     vector<vector<int>> v = {{0, 1, 1, 0},
-                             {1, 1, 1, 1},
-                             {1, 1, 1, 1},
-                             {1, 1, 0, 0}};
-
+                              {1, 1, 1, 1},
+                              {1, 1, 1, 1},
+                              {1, 1, 0, 0}};
+    /*
+        vector<vector<char>> v = {{0, 1, 1, 0},
+                                 {1, 1, 1, 1},
+                                 {1, 1, 1, 1},
+                                 {1, 1, 0, 0}};
+     */
     cout << maxArea(v, 4, 4) << endl;
 
     return 0;

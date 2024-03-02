@@ -34,16 +34,6 @@ int diameter(Node* root){
 T.C = O(N)
 
 
-int height(TreeNode<int> *root) {
-  if (root == NULL)
-    return 0;
-
-  int left = height(root->left);
-  int right = height(root->right);
-
-  int ans = max(left, right) + 1;
-  return ans;
-}
 
 pair<int, int>
 fastDiametr(TreeNode<int> *root) { // first = diameter second = height

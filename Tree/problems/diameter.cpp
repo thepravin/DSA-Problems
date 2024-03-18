@@ -43,7 +43,7 @@ fastDiametr(TreeNode<int> *root) { // first = diameter second = height
   }
 
   pair<int, int> left = fastDiametr(root->left);
-  pair<int, int> right = fastDiametr(root->right);
+  pair<int, int> right = fastDiametr(root->right)+1;
 
   int op1 = left.first;
   int op2 = right.first;

@@ -53,3 +53,35 @@ int main()
 
     return 0;
 }
+
+
+
+/*
+Node* helper(Node*root,vector<int>&arr,int index){
+
+    if(index>=arr.size()|| arr[index]==-1){
+        return nullptr;
+    }
+
+    root = new Node(arr[index]);
+
+    root->left = helper(root, arr, 2*index+1);
+    root->right = helper(root, arr, 2*index+2);
+
+    return root;
+   
+}
+
+Node* createTree(vector<int>&arr){
+    // Write your code here.
+
+    Node* root = NULL;
+    
+    root = helper(root,arr,0);
+
+    return root;
+
+}
+
+
+*/

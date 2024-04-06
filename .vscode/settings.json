@@ -1,12 +1,15 @@
 {
     "files.associations": {
+        "*.js": "javascript",
         "*.ejs": "html",
         "iostream": "cpp",
         "*.tcc": "cpp",
         "regex": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp",
+        "array": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
 }

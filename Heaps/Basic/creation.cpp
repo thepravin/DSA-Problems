@@ -36,6 +36,43 @@ public:
             }
         }
     }
+
+    int deleteRoot (){
+        // replace root node value with last node 
+        arr[1]=arr[size];
+        size--; // remove last node (delete)
+
+        // place root node ka data on its correct position
+        int index =1;
+        while(index<size){
+            int left = 2*index;
+            int right = 2*index+1;
+
+            int largest = index;
+            
+                // --> find larget node from left and right child
+            if(left<size && arr[largest]<arr[left]){
+                largest = left;
+            }
+            if(right<size&& arr[largest]<arr[right]){
+                largest = right;
+            }
+
+                // --> arrage it
+            if(largest == index){
+                // value at correct position
+                break;
+            }
+            else{
+                swap(arr[index],arr[largest]);
+                index=largest;
+            }
+        }
+
+        int ans = arr[1]; // max value of heap
+        return ans;
+    }
+
 };
 
 int main(){

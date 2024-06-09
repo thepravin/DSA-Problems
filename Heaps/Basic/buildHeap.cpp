@@ -48,7 +48,7 @@ void sortHeap(int arr[], int n)
         n--;
 
         // heapify
-        heapify(arr, n, 1); // 1 -> because heapify{arrange} first element
+        heapify(arr, n, 1); // 1 -> because heapify{arrange} first element   // ---> yaha par galti hogi
     }
 }
 

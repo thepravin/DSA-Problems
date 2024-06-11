@@ -9,7 +9,8 @@
         "string": "cpp",
         "vector": "cpp",
         "ostream": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "new": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
 }

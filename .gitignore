@@ -1,6 +1,8 @@
 *.exe
 
 practice.cpp
+dummy.cpp
+practice2.cpp
 
 *.vscode
 

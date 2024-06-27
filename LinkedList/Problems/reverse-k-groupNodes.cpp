@@ -90,14 +90,14 @@ int main()
     Node *third = new Node(30);
     Node *fourth = new Node(40);
     Node *fifth = new Node(50);
-   // Node *sixth = new Node(60);
+   Node *sixth = new Node(60);
 
     head->next = second;
     second->next = third;
     third->next = fourth;
     fourth->next = fifth;
-    fifth->next = NULL;
-  //  sixth->next=NULL;
+    fifth->next = sixth;
+ 
 
     print(head);
     cout << endl;

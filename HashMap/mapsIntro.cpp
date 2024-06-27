@@ -13,9 +13,11 @@ int main()
 // insertion
     // 1
     pair<string, int> p = make_pair("pravin", 3);
+    m.insert(p);
 
     // 2
     pair<string, int> q("home", 2);
+    m.insert(q);
 
     // 3
     m["city"] = 2;

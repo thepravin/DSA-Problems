@@ -10,7 +10,8 @@
         "vector": "cpp",
         "ostream": "cpp",
         "array": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "unordered_map": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
 }

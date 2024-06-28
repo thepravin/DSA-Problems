@@ -130,3 +130,65 @@ int main()
 
     return 0;
 }
+
+/*
+ ListNode* middleNode(ListNode*head){
+        ListNode* slow = head;
+        ListNode* fast = head->next;
+        while(fast && fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
+
+    ListNode* mergeSortLL(ListNode*list1,ListNode*list2){
+        ListNode* mergeHead = new ListNode(-1);
+        ListNode* mergeTail = mergeHead;
+        ListNode* left = list1;
+        ListNode* right = list2;
+
+        while(left && right){
+            if(left->val <= right->val){
+                mergeTail->next = left;
+                mergeTail = left;
+                left=left->next;
+            }else{
+                mergeTail->next = right;
+                mergeTail=right;
+                right = right->next;
+            }
+        }
+
+        if(left==NULL){
+            mergeTail->next = right;
+        }else{
+            mergeTail->next = left;
+        }
+
+        mergeHead = mergeHead->next;
+        return mergeHead;
+    }
+
+    ListNode* sortHelper(ListNode*head){
+        // base case
+          if(!head || !head->next) return head;
+
+        // find middle and divide LL in 2 part
+        ListNode* middle = middleNode(head);
+        ListNode* left = head;
+        ListNode* right = middle->next;
+        middle->next = NULL;
+
+        // sort 2 part recursively
+        left = sortHelper(left);
+        right = sortHelper(right);
+
+        // merge 2 sorted LL
+        ListNode* mergeList = mergeSortLL(left,right);
+
+        return mergeList;      
+    }
+
+
+*/

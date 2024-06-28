@@ -1,1 +1,1 @@
-helper(it, n, m)
+    ListNode *right = list2;

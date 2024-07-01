@@ -19,7 +19,7 @@ public:
 
     void push(int data)
     {
-        if (size - top >= 1)
+        if (size - top > 1)
         {
             // space available
             top++;

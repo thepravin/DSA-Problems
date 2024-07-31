@@ -68,10 +68,10 @@ NodeData *findLargestBST(Node *root, int &ans)
         currNodeKaAns->validBST = false;
     }
 
-    if(currNodeKaAns->validBST){
-        ans = max(ans,currNodeKaAns->size);
+    if (currNodeKaAns->validBST)
+    {
+        ans = max(ans, currNodeKaAns->size);
     }
 
     return currNodeKaAns;
 }
-

@@ -11,7 +11,8 @@
         "ostream": "cpp",
         "array": "cpp",
         "new": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "cmath": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
 }

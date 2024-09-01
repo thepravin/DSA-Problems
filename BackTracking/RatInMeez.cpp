@@ -66,12 +66,13 @@ void solveMaze(int arr[3][3], int row, int col, int i, int j, vector<vector<bool
 int main()
 {
 
-    int maze[3][3] =
-        {{1, 0, 0},
+    int maze[4][3] =
+        {{1, 0, 1},
          {1, 1, 0},
+         {0, 1, 1},
          {1, 1, 1}};
 
-    int row = 3;
+    int row = 4;
     int col = 3;
 
     vector<vector<bool>> visited(row, vector<bool>(col, false));

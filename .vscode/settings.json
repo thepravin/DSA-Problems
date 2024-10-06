@@ -18,5 +18,11 @@
         "utility": "cpp",
         "valarray": "cpp"
     },
-    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
+    "folder-color.pathColors": [
+        {
+            "folderPath": "Problems\\IMP CONCEPTS\\",
+            "color": "foldercolorizer.red"
+        }
+    ]
 }

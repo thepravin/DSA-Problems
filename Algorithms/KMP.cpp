@@ -1,5 +1,6 @@
 /*
     LPS = Longest prefix suffix
+    * Used to find pattern string present into text string or not. if present then starting indexs.
  */
 
 // KMP Algorithm

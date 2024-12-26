@@ -24,5 +24,6 @@
             "folderPath": "Problems\\IMP CONCEPTS\\",
             "color": "foldercolorizer.red"
         }
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

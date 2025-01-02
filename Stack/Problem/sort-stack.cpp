@@ -34,6 +34,7 @@ void sortStack(stack<int>&st){
 
     int target = st.top();
     st.pop();
+    cout<<target<<endl;
 
     sortStack(st);
 
@@ -54,10 +55,11 @@ int main()
 {
 
     stack<int> st;
-    st.push(5);
-    st.push(15);
-    st.push(1);
+    st.push(11);
+    st.push(2);
     st.push(32);
+    st.push(3);
+    st.push(42);
 
     print(st);
     cout<<endl;

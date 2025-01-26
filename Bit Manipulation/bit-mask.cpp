@@ -73,4 +73,8 @@ int main()
 
     int ans4 = countSetBit(8); // count all 1
     cout << "Count set bit : " << ans4 << endl;
+
+    //* stl function to count set bit
+    int ans5 = __builtin_popcount(8);
+    cout<<"Count set bit (using inbuilt function) : "<<ans5<<endl;
 }

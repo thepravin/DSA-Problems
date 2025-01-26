@@ -3,7 +3,7 @@
     * Used to find pattern string present into text string or not. if present then starting indexs.
  */
 
-// KMP Algorithm
+// KMP Algorithm [ O(m+n)] ; pattern.size = m && text.size = n
 
 #include <iostream>
 #include <string>

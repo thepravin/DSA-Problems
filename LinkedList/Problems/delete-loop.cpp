@@ -1,5 +1,53 @@
 // find starting node of loop
 
+/*
+ * always consider secial case : if cycle start from first node. at that time slow and fast both point to head, if
+ * both are moving then by one then they never meet. [soconsider second code always......]
+ */
+
+/*
+* ========> SECOND CODE <=========
+// Function to remove a loop in the linked list.
+    void removeLoop(Node* head) {
+        Node*slow = head;
+        Node*fast = head;
+
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(slow==fast){
+                slow=head;
+                break;
+            }
+        }
+
+
+    // If no loop is found, return
+    if (slow != head) {
+        return;
+    }
+
+    // special : If loop start form first node
+    if(fast==head){
+        while(fast->next != slow){
+            fast = fast->next;
+        }
+        fast->next=NULL;
+    }else{
+         Node*prev = fast;
+            while(slow!=fast){
+                prev = fast;
+                slow=slow->next;
+                fast=fast->next;
+            }
+            prev->next=NULL;
+    }
+    return;
+
+    }
+
+ */
+
 #include <iostream>
 using namespace std;
 

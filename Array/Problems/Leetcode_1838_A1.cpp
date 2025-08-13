@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+//-----------------------------------------------------------------------------------------------------------------
 //Approach-1 (Using Binary Search)
 //T.C : O(nlogn)
 //S.C : O(n) for prefixSum for effienctly calculating windowSum
@@ -60,5 +62,77 @@ int maxFrequency(vector<int> &nums, int k) {
 
   return result;
 }
+//----------------------------------------------------------------------------------------------------------------------------------------------
 
+//Approach-2 (Using sliding window)
+//T.C : O(nlogn)
+//S.C : O(1)
 
+int maxFrequency(vector<int>& nums, int k) {
+        int n = nums.size();
+
+        sort(begin(nums),end(nums));
+
+        int l = 0;
+        long currSum = 0;        
+        int result = 0;
+
+        for (int r = 0; r < n; ++r) {
+            int target = nums[r];
+            long windowSize = r - l + 1;
+            long windowSum = windowSize * target;
+            currSum += nums[r];
+
+            long operations = windowSum - currSum;
+
+            while (operations > k) // shrink the window
+            {
+                currSum -= nums[l];
+                l++;
+                windowSize = r - l + 1;
+                windowSum = windowSize * target;
+                operations = windowSum - currSum;
+            }
+           
+            result = max(result, (r - l + 1));
+        }
+
+        return result;
+    }
+
+//----------------------------------------------------------------------------------------------------------
+//Approach-3 (Improved sliding window)
+//T.C : O(nlogn)
+//S.C : O(1)
+
+int maxFrequency(vector<int>& nums, int k) {
+        int n = nums.size();
+
+        sort(begin(nums),end(nums));
+
+        int l = 0;
+        long currSum = 0;        
+        int result = 0;
+
+        for (int r = 0; r < n; ++r) {
+            int target = nums[r];
+            long windowSize = r - l + 1;
+            long windowSum = windowSize * target;
+            currSum += nums[r];
+
+            long operations = windowSum - currSum;
+
+            if (operations > k) // shrink the window  <--------- here is the change for 'improvment'
+            {
+                currSum -= nums[l];
+                l++;
+                windowSize = r - l + 1;
+                windowSum = windowSize * target;
+                operations = windowSum - currSum;
+            }
+           
+            result = max(result, (r - l + 1));
+        }
+
+        return result;
+    }

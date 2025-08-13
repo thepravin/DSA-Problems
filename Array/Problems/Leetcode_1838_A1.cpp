@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+//Approach-1 (Using Binary Search)
+//T.C : O(nlogn)
+//S.C : O(n) for prefixSum for effienctly calculating windowSum
 
 // count prefix sum
 void countPrefixSum(vector<long> &prevSum, vector<int> &nums) {
@@ -58,7 +61,4 @@ int maxFrequency(vector<int> &nums, int k) {
   return result;
 }
 
-/*
-    T.C = O(N log N)
-    S.C = O(N)  <-- prefix sum vector
-*/
+

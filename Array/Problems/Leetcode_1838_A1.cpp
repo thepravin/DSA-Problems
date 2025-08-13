@@ -46,6 +46,7 @@ int binarySearch(int target_id, int k, vector<long> &prevSum,
 int maxFrequency(vector<int> &nums, int k) {
   int n = nums.size();
 
+  // every nums[i] want to ask, will you change?, so it can only ask to smaller nums not greater. (condition only increase by 1 not decrease)
   sort(begin(nums), end(nums));
 
   // previous sum

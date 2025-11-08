@@ -12,6 +12,37 @@ Note : avoide zero
 ----------------------------------------------------------------------
 */
 
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        int isZeroCount = 0;
+        int product = 1;
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 0) {
+                isZeroCount++;
+            } else {
+                product *= nums[i];
+            }
+        }
+
+        vector<int> ans(n, 0);
+
+        if (isZeroCount > 1) {
+            return ans;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 0) {
+                ans[i] = product;
+            } else if (isZeroCount > 0) {
+                ans[i] = 0;
+            } else {
+                ans[i] = product / nums[i];
+            }
+        }
+
+        return ans;
+    }
 
 
 /*
